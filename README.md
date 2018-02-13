@@ -56,3 +56,7 @@ verify online
 rails g devise:views
 (rails g migration AddAddressToUsers address:string) (rails db:migrate / heroku run rails db:migrate)
 
+(--> apps/controllers/Application  
+  def sanitize_devise_params
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:address])
+  end)

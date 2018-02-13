@@ -41,6 +41,7 @@ rails(rake?) db:migrate
 -->views/home/index.html.erb
 <% if user_signed_in? %>
 <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+<%= link_to "Edit Profile", edit_user_registration_path %>
 <% else %>
 <%= link_to "Sign In", new_user_session_path %>
 <%= link_to "Sign Up", new_user_registration_path %>
@@ -49,3 +50,9 @@ rails(rake?) db:migrate
 git add/commit
 git push heroku master
 heroku run rails db:migrate
+
+verify online
+
+rails g devise:views
+(rails g migration AddAddressToUsers address:string) (rails db:migrate / heroku run rails db:migrate)
+

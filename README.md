@@ -34,3 +34,22 @@ heroku create
 git add/commit -m
 git push heroku master
 heroku open
+
+<h1>Devise</h1>
+gem 'devise'
+bundle install --without production
+rails g devise:install
+(<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>) par ex pour flash messages
+(rails g devise:views) for customize them
+rails g controller Home index (routes)
+rails g devise User
+rails(rake?) db:migrate
+
+-->views/home/index.html.erb
+<% if user_signed_in? %>
+<%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+<% else %>
+<%= link_to "Sign In", new_user_session_path %>
+<%= link_to "Sign Up", new_user_registration_path %>
+<% end %>

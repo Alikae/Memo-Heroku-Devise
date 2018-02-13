@@ -53,3 +53,5 @@ rails(rake?) db:migrate
 <%= link_to "Sign In", new_user_session_path %>
 <%= link_to "Sign Up", new_user_registration_path %>
 <% end %>
+
+heroku run rails db:migrate

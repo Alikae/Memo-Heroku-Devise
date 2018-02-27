@@ -61,3 +61,11 @@ rails g devise:views
   def sanitize_devise_params
     devise_parameter_sanitizer.permit(:sign_up, keys: [:address])
   end)
+
+
+
+
+For assets:
+config.assets.compile = true      in    config/environnements/production.rb
+rake assets:precompile
+Beaucoup de Inch'Allah
